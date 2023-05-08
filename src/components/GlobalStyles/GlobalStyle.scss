@@ -4,9 +4,17 @@
 
 :root {
     --primary: #fe2c55;
+    --black: #000;
+    --text-color: #333;
+
+    // Default layout
+    --default-layout-header-height: 60px;
+    --default-layout-weight: 1150px;
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -15,8 +23,21 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.6rem;
-    line-height: 20px;
+    line-height: 1.5;
     text-rendering: optimizeSpeed;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
 }
