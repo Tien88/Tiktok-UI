@@ -13,13 +13,15 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
-import Button from '../../../../components/Button';
+import config from '../../../config';
+import Button from '../../../components/Button';
 import styles from './Header.module.scss';
-import images from '../../../../assets/images';
-import Menu from '../../../../components/Popper/Menu';
-import { UploadIcon, MessageIcon, InboxIcon } from '../../../../components/Icons';
-import Image from '../../../../components/Image';
+import images from '../../../assets/images';
+import Menu from '../../../components/Popper/Menu';
+import { UploadIcon, MessageIcon, InboxIcon } from '../../../components/Icons';
+import Image from '../../../components/Image';
 import Search from '../Search';
 
 const cx = classNames.bind(styles);
@@ -29,7 +31,7 @@ const MENU_ITEMS = [
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'English',
         children: {
-            title: 'Language',
+            title: 'Language 123',
             data: [
                 {
                     type: 'language',
@@ -98,7 +100,9 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 {/* Logo Tiktok */}
-                <img src={images.logo} alt="Tiktok" />
+                <Link to={config.routes.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="Tiktok" />
+                </Link>
 
                 {/* Search */}
                 <Search />
